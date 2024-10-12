@@ -3,8 +3,6 @@ tika-helm
 
 [![Artifact HUB](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/apache-tika)](https://artifacthub.io/packages/search?repo=apache-tika)
 
-![lint + install workflow](https://github.com/apache/tika-helm/actions/workflows/lint-test.yaml/badge.svg)
-
 A [Helm chart][] to deploy [Apache Tika][] on [Kubernetes][].
 
 <img src="https://tika.apache.org/tika.png" width="300" />
@@ -23,7 +21,6 @@ will work with the version of Tika you are installing.
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-
 - [tika-helm](#tika-helm)
   - [Requirements](#requirements)
   - [Installing](#installing)
@@ -41,7 +38,6 @@ will work with the version of Tika you are installing.
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 <!-- Use this to update TOC: -->
 <!-- docker run --rm -it -v $(pwd):/usr/src jorgeandrada/doctoc --github -->
-
 
 ## Requirements
 
@@ -116,11 +112,14 @@ Please check `artifacthub.io/changes` in `Chart.yaml` before upgrading.
 | --------- | ----------- | ------- |
 | `...`     | ...         | ...     |
 
-### Deprecated
+## Testing
 
-| Parameter | Description | Default |
-| --------- | ----------- | ------- |
-| `...`     | ...         | `...`   |
+```
+helm plugin install https://github.com/helm-unittest/helm-unittest.git
+helm unittest .
+```
+
+See [helm-unittest][] for canonical documentation.
 
 ## Contributing
 
@@ -150,6 +149,7 @@ The code is licensed permissively under the [Apache License v2.0][].
 [CHANGELOG.md]: https://github.com/apache/tika-helm/blob/master/CHANGELOG.md
 [CONTRIBUTING]: https://github.com/apache/tika#contributing-via-github
 [apache/tika]: https://github.com/apache/tika-docker
+[helm-unittest]: https://github.com/helm-unittest/helm-unittest
 [Helm chart]: https://helm.sh/docs/topics/charts/
 [Kubernetes]: https://kubernetes.io/
 [Tika Docker image]: https://hub.docker.com/r/apache/tika/tags?page=1&ordering=last_updated
